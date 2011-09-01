@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+		<title>jQuery Family Demo</title>
+		<style> 
+			section,
+			div,
+			p{
+				border: 1px solid #CCC;
+				padding: 5px; 
+				margin:5px;
+				background:#FFF;
+			}
+			section,
+			div{
+				float:left;
+			}
+			button{
+				display:block;
+				margin:5px 0;
+			}
+			.selected{
+				background:yellow;
+			}
+			.clear{clear: both;}
+		</style>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="family.js"></script>
+
+		<script>
+			$(function(){
+				//reusable function
+				function clearSelection(){
+					$(".selected").removeClass("selected");
+				}
+
+				$("#select-dad").click(function(){
+					clearSelection();
+					$(this).dad().addClass("selected");
+				});
+
+				$("#select-grandma").click(function(){
+					clearSelection();
+					$(this).grandma().addClass("selected");
+				});
+
+				$("#select-uncles").click(function(){
+					clearSelection();
+					$(this).uncles().addClass("selected");
+				});
+
+				
+				
+				$("#select-nephews").click(function(){
+					clearSelection();
+					$(this).nephews().addClass("selected");
+				});
+
+				$("#select-cousins").click(function(){
+					clearSelection();
+					$(this).cousins().addClass("selected");
+				});
+
+
+				$("#select-greatgrandpa").click(function(){
+					clearSelection();
+					$(this).greatGrandpa().addClass("selected");
+				});
+
+				$("#select-greataunts").click(function(){
+					clearSelection();
+					$(this).greatAunts().addClass("selected");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<section>
+			<div>
+				<div>
+					<button id="select-dad">Select Dad</button>
+					<button id="select-grandma">Select Grandma</button>
+					<button id="select-uncles">Select Uncles</button>
+				</div>
+				<div>
+					<button id="select-cousins">Select Cousins</button>
+					<button id="select-nephews">Select Nephews</button>
+					
+					<p>
+						A paragraph <em>with</em> some <br /><strong>sample</strong> elements <span>inside</span>.
+				</div>
+				<div>
+					<button id="select-greatgrandpa">Select Great Grandpa</button>
+					<button id="select-greataunts">Select Great Aunts</button>
+				</div>
+				<span class="clear"></span>				
+			</div>
+			<span class="clear"></span>		
+
+			<div>
+				<p>a paragraph</p>
+			</div>
+			<div>
+				<p>a paragraph</p>
+			</div>
+			<div>
+				<p>a paragraph</p>
+			</div>
+
+			<div>
+				<p>a paragraph</p>
+			</div>
+			<div>
+				<p>a paragraph</p>
+			</div>
+			<div>
+				<p>a paragraph</p>
+			</div>
+			<span class="clear"></span>		
+		</section>
+
+	</body>
+</html>
